@@ -115,18 +115,5 @@ _Resets to the after-construction state_
     void  pyinc_clear();
 
 
-Licence
--------
-GNU GPLv3 with attribution. The authors of pYIN ask to kindly attribute their work via a citation:
 
-```
-@INPROCEEDINGS{6853678,
-  author={Mauch, Matthias and Dixon, Simon},
-  booktitle={2014 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)}, 
-  title={PYIN: A fundamental frequency estimator using probabilistic threshold distributions}, 
-  year={2014},
-  pages={659-663},
-  doi={10.1109/ICASSP.2014.6853678}}
-} 
-```
-
+# LibPyin

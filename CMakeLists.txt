@@ -4,12 +4,16 @@ set (CMAKE_CXX_STANDARD 11)
 
 add_definitions(-DLIBPYIN_BUILD_SHARED)
 
-include_directories(./source/)
+include_directories(./libpitch/)
 
-aux_source_directory(./source/vamp SRC_LIST)
-aux_source_directory(./source/vamp-sdk SRC_LIST)
-aux_source_directory(./source/pyin SRC_LIST)
+aux_source_directory(./libpitch/vamp SRC_LIST)
+aux_source_directory(./libpitch/vamp-sdk SRC_LIST)
+aux_source_directory(./libpitch/pyin SRC_LIST)
 
-set(CMAKE_BUILD_TYPE Release)
+set(CMAKE_BUILD_TYPE Debug)
 
-add_library(LibPyin SHARED ${SRC_LIST} ./source/normal_dist_pdf.cpp ./source/libpyincpp.cpp ./source/libpyinc.cpp)
+add_library(LibPyin SHARED ${SRC_LIST} ./libpitch/normal_dist_pdf.cpp ./libpitch/libpyincpp.cpp ./libpitch/libpyinc.cpp)
+
+
+add_executable(test_sound main.cpp)
+target_link_libraries(test_sound LibPyin)

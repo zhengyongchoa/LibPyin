@@ -4,18 +4,18 @@
 
 // This code demonstrates using the C++ interface to LibPyin from C++
 
-#include "source/libpyincpp.h"	
+#include "libpitch/libpyincpp.h"
 
 #define M_PI acos(-1.0)
 
 int main() {
-        int SAMPLE_RATE = 44100;
-        int SAMPLE_COUNT = 10000;
-        int BLOCK_SIZE = 2048;
+        int SAMPLE_RATE = 16000;
+        int SAMPLE_COUNT = 32000;
+        int BLOCK_SIZE = 1024;
         int STEP_SIZE = 512;
 
         // Prepare objects
-        PyinCpp my_pyin(SAMPLE_RATE);
+        PyinCpp my_pyin(SAMPLE_RATE, BLOCK_SIZE, STEP_SIZE);
         std::vector<float> samples(SAMPLE_COUNT);
 
 
@@ -30,8 +30,11 @@ int main() {
         std::vector<float> pitches = my_pyin.feed(samples);
 
         // Go through and print the pitches
+        int numf0= 0;
         for (const float pitch : pitches)
         {
             std::cout << pitch << " ";
+            numf0++;
         }
+        std::cout<< std::endl <<"number is "<< numf0 << std::endl;
 }
