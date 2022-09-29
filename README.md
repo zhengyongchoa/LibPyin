@@ -1,4 +1,6 @@
+适用macos linux
+
+软件 clion
+build cmake
 
 
-修改
-Examples
